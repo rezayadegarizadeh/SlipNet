@@ -44,7 +44,7 @@ def get_next_refresh(minutes=30) -> str:
 def generate_output(per_channel_data: OrderedDict, total_unique: int) -> str:
     now_tehran = datetime.now(TEHRAN_TZ)
     now_str = now_tehran.strftime("%Y-%m-%d %H:%M:%S")
-    next_refresh = get_next_refresh(30)
+    next_refresh = get_next_refresh(10)
 
     lines = []
     lines.append("☬Exclusive SHΞN™ made")
@@ -64,7 +64,7 @@ def generate_output(per_channel_data: OrderedDict, total_unique: int) -> str:
 
     lines.append("___________________________")
     lines.append("☬Exclusive SHΞN™ made")
-    lines.append("More!? T.me/aiShervin")
+    lines.append("More!? T.me/Shervini")
     return "\n".join(lines)
 
 def main():
