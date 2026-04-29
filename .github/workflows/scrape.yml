@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -30,6 +32,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ☬SHΞN™.txt
-          git diff --quiet && git diff --staged --quiet || git commit -m "Next refresh less than 10min  [skip ci]"
-          git push
+          # استفاده از نقل قول برای نام فایل با کاراکترهای خاص
+          git add '☬SHΞN™.txt'
+          # اگر تغییری وجود نداشته باشد (با وجود به‌روز شدن timestamps همیشه تغییر دارد) commit می‌کنیم
+          git diff --quiet && git diff --staged --quiet || git commit -m "Next refresh less than 10min [skip ci]"
+          git push origin main --force-with-lease
