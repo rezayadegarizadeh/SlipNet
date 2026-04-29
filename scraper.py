@@ -3,21 +3,15 @@ import requests
 import time
 from datetime import datetime, timedelta
 from collections import OrderedDict
+from zoneinfo import ZoneInfo
 
 # ========== CONFIGURATION ==========
+TEHRAN_TZ = ZoneInfo("Asia/Tehran")
+
 CHANNELS = [
-    "xgvpn",
-    "appxa",
-    "appxa2",
-    "IRNOTPHONE",
-    "IRAN_V2RAY1",
-    "SlipNet_decode",
-    "blackRay",
-    "SparrK_VPN",
-    "slipnet_chat",
-    "SlipNet_app",
-    "VConfing",
-    "capcutchina"
+    "xgvpn", "appxa", "appxa2", "IRNOTPHONE", "IRAN_V2RAY1",
+    "SlipNet_decode", "blackRay", "SparrK_VPN", "slipnet_chat",
+    "SlipNet_app", "VConfing", "capcutchina"
 ]
 
 HEADERS = {
@@ -26,11 +20,10 @@ HEADERS = {
 
 SLIPNET_REGEX = re.compile(r'slipnet(?:-enc)?:\/\/[^\s<>"\'\[\]{}|\\^`]+', re.IGNORECASE)
 
-OUTPUT_FILE = "☬SHΞN™.txt"
+OUTPUT_FILE = "☬SHΞN™.txt"   # همان نام دلخواه
 
 # ========== FUNCTIONS ==========
 def fetch_channel_page(username: str) -> str:
-    """دریافت صفحه عمومی کانال تلگرام"""
     url = f"https://t.me/s/{username}"
     try:
         resp = requests.get(url, headers=HEADERS, timeout=15)
@@ -41,54 +34,44 @@ def fetch_channel_page(username: str) -> str:
         return ""
 
 def extract_links_from_html(html: str) -> set:
-    """استخراج لینک‌های slipnet از HTML (حذف تکراری در همان کانال)"""
     return set(SLIPNET_REGEX.findall(html))
 
 def get_next_refresh(minutes=30) -> str:
-    """زمان بعدی به روزرسانی (اکنون + minutes) به فرمت hh:mm AM/PM"""
-    now = datetime.now()
-    future = now + timedelta(minutes=minutes)
+    now_tehran = datetime.now(TEHRAN_TZ)
+    future = now_tehran + timedelta(minutes=minutes)
     return future.strftime("%I:%M %p").lstrip("0")
 
 def generate_output(per_channel_data: OrderedDict, total_unique: int) -> str:
-    """
-    per_channel_data: OrderedDict {channel_name: list_of_unique_links}
-    total_unique: تعداد کل لینک‌های یکتا در همه کانال‌ها
-    """
-    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now_tehran = datetime.now(TEHRAN_TZ)
+    now_str = now_tehran.strftime("%Y-%m-%d %H:%M:%S")
     next_refresh = get_next_refresh(30)
 
     lines = []
-    # Header
     lines.append("☬Exclusive SHΞN™ made")
     lines.append("Live SlipNet Node Collector")
     lines.append(f"Last update: {now_str}      Total node : {total_unique}   Next refresh: {next_refresh}")
-    lines.append("")  # خط خالی
+    lines.append("")   # خط خالی قبل از اولین بخش
 
-    # Sections per channel
     for ch, links in per_channel_data.items():
         count = len(links)
         if count == 0:
             continue
         lines.append(f"Slipnet nod from : {ch} {count} Node")
+        lines.append("")   # خط خالی بعد از عنوان
         for link in links:
-            # فقط خود لینک، بدون فاصله اضافه
             lines.append(link)
-        lines.append("")  # خط خالی بعد از هر سورس
+        lines.append("")   # یک خط خالی بعد از هر مجموعه (برای جداسازی)
 
-    # Footer
     lines.append("___________________________")
     lines.append("☬Exclusive SHΞN™ made")
-    lines.append("Support: T.me/Shervini")
-
+    lines.append("More !?: T.me/Shervini")
     return "\n".join(lines)
 
 def main():
-    print(f"[{datetime.now().isoformat()}] Starting SlipNet collector (TXT mode)")
+    print(f"[{datetime.now(TEHRAN_TZ).isoformat()}] Starting SlipNet collector (TXT mode)")
 
-    # دیکشنری برای نگهداری لینک‌های هر کانال (حذف تکراری درون هر کانال)
     per_channel_links = OrderedDict()
-    all_unique_links = set()  # برای محاسبه کل یکتا (در کل)
+    all_unique_links = set()
 
     for ch in CHANNELS:
         print(f"  -> Fetching {ch}")
@@ -102,21 +85,18 @@ def main():
             per_channel_links[ch] = []
             print(f"      No slipnet links found")
         else:
-            # حذف تکراری در همان کانال
             unique_links = list(links)
             per_channel_links[ch] = unique_links
             all_unique_links.update(unique_links)
             print(f"      Found {len(unique_links)} unique slipnet link(s)")
 
-        time.sleep(1)  # احترام به محدودیت
+        time.sleep(1)
 
     total_unique_all = len(all_unique_links)
     print(f"Total unique configs (across all channels): {total_unique_all}")
 
-    # تولید محتوای فایل
     output_content = generate_output(per_channel_links, total_unique_all)
 
-    # ذخیره در فایل
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(output_content)
 
