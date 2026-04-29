@@ -56,7 +56,7 @@ def generate_output(per_channel_data: OrderedDict, total_unique: int) -> str:
         count = len(links)
         if count == 0:
             continue
-        lines.append(f"Slipnet nod from : {ch} {count} Node")
+        lines.append(f"Slipnet Node From : {ch} {count} Node")
         lines.append("")   # خط خالی بعد از عنوان
         for link in links:
             lines.append(link)
@@ -64,7 +64,7 @@ def generate_output(per_channel_data: OrderedDict, total_unique: int) -> str:
 
     lines.append("___________________________")
     lines.append("☬Exclusive SHΞN™ made")
-    lines.append("More !?: T.me/Shervini")
+    lines.append("More!? T.me/aiShervin")
     return "\n".join(lines)
 
 def main():
