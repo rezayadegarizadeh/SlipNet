@@ -9,9 +9,18 @@ from zoneinfo import ZoneInfo
 TEHRAN_TZ = ZoneInfo("Asia/Tehran")
 
 CHANNELS = [
-    "xgvpn", "appxa", "appxa2", "IRNOTPHONE", "IRAN_V2RAY1",
-    "SlipNet_decode", "blackRay", "SparrK_VPN", "slipnet_chat",
-    "SlipNet_app", "VConfing", "capcutchina"
+    "xgvpn",
+    "appxa",
+    "appxa2",
+    "IRNOTPHONE",
+    "IRAN_V2RAY1",
+    "SlipNet_decode",
+    "blackRay",
+    "SparrK_VPN",
+    "slipnet_chat",
+    "SlipNet_app",
+    "VConfing",
+    "capcutchina"
 ]
 
 HEADERS = {
@@ -20,7 +29,7 @@ HEADERS = {
 
 SLIPNET_REGEX = re.compile(r'slipnet(?:-enc)?:\/\/[^\s<>"\'\[\]{}|\\^`]+', re.IGNORECASE)
 
-OUTPUT_FILE = "☬SHΞN™.txt"   # همان نام دلخواه
+OUTPUT_FILE = "☬SHΞN™.txt"
 
 # ========== FUNCTIONS ==========
 def fetch_channel_page(username: str) -> str:
@@ -36,7 +45,8 @@ def fetch_channel_page(username: str) -> str:
 def extract_links_from_html(html: str) -> set:
     return set(SLIPNET_REGEX.findall(html))
 
-def get_next_refresh(minutes=30) -> str:
+def get_next_refresh(minutes=10) -> str:
+    """زمان بعدی به‌روزرسانی با وقت تهران (بر اساس cron 10 دقیقه)"""
     now_tehran = datetime.now(TEHRAN_TZ)
     future = now_tehran + timedelta(minutes=minutes)
     return future.strftime("%I:%M %p").lstrip("0")
@@ -44,27 +54,53 @@ def get_next_refresh(minutes=30) -> str:
 def generate_output(per_channel_data: OrderedDict, total_unique: int) -> str:
     now_tehran = datetime.now(TEHRAN_TZ)
     now_str = now_tehran.strftime("%Y-%m-%d %H:%M:%S")
-    next_refresh = get_next_refresh(10)
+    next_refresh = get_next_refresh(10)  # 10 دقیقه بعد
 
     lines = []
     lines.append("☬Exclusive SHΞN™ made")
     lines.append("Live SlipNet Node Collector")
     lines.append(f"Last update: {now_str}      Total node : {total_unique}   Next refresh: {next_refresh}")
-    lines.append("")   # خط خالی قبل از اولین بخش
+    lines.append("")  # خط خالی قبل از اولین بخش
 
     for ch, links in per_channel_data.items():
         count = len(links)
         if count == 0:
             continue
-        lines.append(f"Slipnet Node From : {ch} {count} Node")
-        lines.append("")   # خط خالی بعد از عنوان
+        lines.append(f"Slipnet nod from : {ch} {count} Node")
+        lines.append("")  # خط خالی بعد از عنوان
+        # هر کانفیگ در یک خط مجزا (بدون کاراکتر اضافی)
         for link in links:
             lines.append(link)
-        lines.append("")   # یک خط خالی بعد از هر مجموعه (برای جداسازی)
+        lines.append("")  # خط خالی بین سورس‌ها
 
-    lines.append("___________________________")
+    # ========== فوتر جدید با آرت ASCII ==========
+    lines.append("Overhauld ☬ SHΞЯVIN™")
+    lines.append("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠉⠉⠉⠉⠉⠉⠉⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⢀⣤⣾⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠉⠀⠀⠚⠛⠛⠛⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⣀⣀⣀⣀⣀⣀⣀⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠀⠉⠛⠿⠿⣿⣿⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⠤⠀⠉⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠉⠉⢀⣀⣤⣶⣾⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠒⠛⠛⠛⠛⠛⠛⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠀⣶⣶⠀⢰⣶⣶⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⡀⠙⠋⢀⡀⠈⠛⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠿⣶⡶⠿⣿⣿⠶⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠀⣿⡇⠀⣿⣿⠀⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠀⣿⣇⣀⣿⣿⠀⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠛⠛⠛⠛⠛⠛⠛⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⣶⣶⣶⠀⣶⣶⣶⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠿⠿⠿⠀⠿⠿⠿⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⣤⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⠋⢀⣿⠋⢀⡀⠙⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣇⠀⢿⡏⢀⣾⡿⠀⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⣤⣀⣀⣼⣇⣀⣰⣿⣿⣿⣿⣿")
+    lines.append("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿")
     lines.append("☬Exclusive SHΞN™ made")
-    lines.append("More!? T.me/Shervini")
+    lines.append("More !? T.me/Shervini")
+
     return "\n".join(lines)
 
 def main():
@@ -90,11 +126,12 @@ def main():
             all_unique_links.update(unique_links)
             print(f"      Found {len(unique_links)} unique slipnet link(s)")
 
-        time.sleep(1)
+        time.sleep(1)  # احترام به محدودیت
 
     total_unique_all = len(all_unique_links)
     print(f"Total unique configs (across all channels): {total_unique_all}")
 
+    # بازنویسی کامل فایل (حتی اگر لینک‌ها تغییر نکرده باشند، timestamp ها عوض می‌شوند)
     output_content = generate_output(per_channel_links, total_unique_all)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
