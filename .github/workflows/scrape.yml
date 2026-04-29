@@ -1,4 +1,4 @@
-toname: SlipNet Collector (TXT)
+name: SlipNet Collector (TXT)
 
 on:
   schedule:
