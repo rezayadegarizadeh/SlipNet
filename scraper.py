@@ -134,7 +134,15 @@ CHANNELS = [
     "Clockwise_Groove",
     "Clockwise",
     "Groove",
-    "tweetycp"
+    "tweetycp",
+    "mysubcake",
+    "myiranbanoo",
+    "adnanpes",
+    "v2rayng0201",
+    "v2rayng020",
+    "v2rayng02",
+    "v2rayng0",
+    "v2rayng"
 ]
 
 HEADERS = {
