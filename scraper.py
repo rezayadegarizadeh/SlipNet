@@ -83,7 +83,23 @@ CHANNELS = [
     "vpnir_404",
     "iampedi",
     "whitedns",
-    "wiki_tajrobe"
+    "wiki_tajrobe",
+    "vpnsshocean",
+    "2475571063-rojproxy",
+    "rojproxy",
+    "v2rayngvpn",
+    "SabzNetBot",
+    "sabznetvpn",
+    "vpn_Click",
+    "proxymtprotoir",
+    "VPNSabzSeller",
+    "givevpn",
+    "rom1_ir",
+    "FreeVPNShield",
+    "niazcom_ir",
+    "linkdoni_irtele",
+    "wireguard_w",
+    
 ]
 
 HEADERS = {
