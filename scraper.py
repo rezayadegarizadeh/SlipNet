@@ -160,7 +160,20 @@ CHANNELS = [
     "eshgheabadii_facts",
     "vasl_bashim",
     "proxylabra",
-    "vpn_freeconfiglab"
+    "vpn_freeconfiglab",
+    "d1eghbali",
+    "iiproxyIran",
+    "velx",
+    "mr_seed4me1",
+    "masoud_v2ray",
+    "pakhshekhayam",
+    "total_fut",
+    "safeport_vpn",
+    "iphone02016vpn",
+    "god_internet1",
+    "config_ng",
+    "Pirimod",
+    "turkishmusicdl"
 ]
 
 HEADERS = {
