@@ -173,7 +173,20 @@ CHANNELS = [
     "god_internet1",
     "config_ng",
     "Pirimod",
-    "turkishmusicdl"
+    "turkishmusicdl",
+    "Mr_Filtershekan",
+    "computer_quchan",
+    "filterban",
+    "hyper_vpn",
+    "filtershekan_channel",
+    "World_Filtershekan",
+    "VPN_Moorche",
+    "nthlink",
+    "AzadNet",
+    "tasiyanc",
+    "filtershekanpro",
+    "omidiranazad",
+    "kamkarstore"
 ]
 
 HEADERS = {
