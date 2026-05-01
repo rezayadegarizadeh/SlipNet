@@ -46,7 +46,10 @@ CHANNELS = [
     "SoftNET",
     "myandroidplus",
     "Marambashi",
-    "WBnet"
+    "WBnet",
+    "wiski",
+    "sosiran",
+    "vpnbaz",
 ]
 
 HEADERS = {
