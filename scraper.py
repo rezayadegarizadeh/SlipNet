@@ -50,6 +50,9 @@ CHANNELS = [
     "wiski",
     "sosiran",
     "vpnbaz",
+    "SOSIranConnect04",
+    "n2vpn",
+    "jojo"
 ]
 
 HEADERS = {
