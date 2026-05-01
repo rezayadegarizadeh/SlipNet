@@ -21,7 +21,8 @@ CHANNELS = [
     "SlipNet_app",
     "VConfing",
     "capcutchina",
-    "v2ray_configs_pool"
+    "v2ray_configs_pool",
+    "ep_not"
 ]
 
 HEADERS = {
