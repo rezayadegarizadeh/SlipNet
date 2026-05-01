@@ -44,8 +44,9 @@ CHANNELS = [
     "iphone02016vpn",
     "tanhanet",
     "SoftNET",
-    "myandroidplus"
-    
+    "myandroidplus",
+    "Marambashi",
+    "WBnet"
 ]
 
 HEADERS = {
