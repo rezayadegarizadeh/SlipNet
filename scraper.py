@@ -37,7 +37,7 @@ OUTPUT_FILE = "☬SHΞN™.txt"
 def fetch_channel_page(username: str) -> str:
     url = f"https://t.me/s/{username}"
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=30)
+        resp = requests.get(url, headers=HEADERS, timeout=15)
         resp.raise_for_status()
         return resp.text
     except Exception as e:
