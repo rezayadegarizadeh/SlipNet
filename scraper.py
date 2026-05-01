@@ -104,7 +104,18 @@ CHANNELS = [
     "networkvppn",
     "Vpn_Shield_Gp",
     "configv2rayng",
-    "v2configer"
+    "v2configer",
+    "nemigam",
+    "bamak",
+    "v2rayrun",
+    "v2rayrun0",
+    "v2raytun",
+    "v2raytun0",
+    "AirdropKhas",
+    "pingkhorbot",
+    "pingkhor_cha",
+    "BefarmaLink",
+    "apkclub"
 ]
 
 HEADERS = {
