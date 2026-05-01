@@ -99,7 +99,12 @@ CHANNELS = [
     "niazcom_ir",
     "linkdoni_irtele",
     "wireguard_w",
-    
+    "shit_mamad",
+    "HotNudss",
+    "networkvppn",
+    "Vpn_Shield_Gp",
+    "configv2rayng",
+    "v2configer"
 ]
 
 HEADERS = {
