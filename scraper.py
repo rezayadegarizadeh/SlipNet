@@ -115,7 +115,26 @@ CHANNELS = [
     "pingkhorbot",
     "pingkhor_cha",
     "BefarmaLink",
-    "apkclub"
+    "apkclub",
+    "red_server_ips",
+    "V2ray_official",
+    "WallWeb-noizdns",
+    "WallWebnoizdns",
+    "WallWeb_noizdns",
+    "viinews",
+    "vlinews",
+    "swagmeli",
+    "parsashonam",
+    "Telegram.Parsashonam",
+    "TelegramParsashonam",
+    "Telegram-Parsashonam",
+    "Telegram_Parsashonam",
+    "v2dogs",
+    "v2dogs_n",
+    "Clockwise_Groove",
+    "Clockwise",
+    "Groove",
+    "tweetycp"
 ]
 
 HEADERS = {
