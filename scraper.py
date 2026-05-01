@@ -22,7 +22,30 @@ CHANNELS = [
     "VConfing",
     "capcutchina",
     "v2ray_configs_pool",
-    "ep_not"
+    "ep_not",
+    "oonfig",
+    "config_hatunnel",
+    "FreakConfig",
+    "Prossh",
+    "Express_freevpn",
+    "AirdropKhas",
+    "NetAccount",
+    "internet_tol",
+    "asrnovin_ir",
+    "deamnet",
+    "vip_fragment_v2ray",
+    "Clockwise_Groove",
+    "bugfreenet",
+    "MTProto_Proxyes",
+    "proxyvpn11",
+    "ServerNett",
+    "anty_filter",
+    "hamester_109",
+    "iphone02016vpn",
+    "tanhanet",
+    "SoftNET",
+    "myandroidplus"
+    
 ]
 
 HEADERS = {
