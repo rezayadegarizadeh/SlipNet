@@ -151,7 +151,16 @@ CHANNELS = [
     "xixv2ray",
     "EfixVPN",
     "maxilium",
-    "ghalagyann2"
+    "ghalagyann2",
+    "configprxy",
+    "netpluss_vpn",
+    "config_ng",
+    "kanfing_proxy1",
+    "kanfing_proxy",
+    "eshgheabadii_facts",
+    "vasl_bashim",
+    "proxylabra",
+    "vpn_freeconfiglab"
 ]
 
 HEADERS = {
