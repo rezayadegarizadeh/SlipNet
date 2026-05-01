@@ -20,7 +20,8 @@ CHANNELS = [
     "slipnet_chat",
     "SlipNet_app",
     "VConfing",
-    "capcutchina"
+    "capcutchina",
+    "v2ray_configs_pool"
 ]
 
 HEADERS = {
