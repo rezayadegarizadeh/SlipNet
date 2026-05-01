@@ -142,7 +142,16 @@ CHANNELS = [
     "v2rayng020",
     "v2rayng02",
     "v2rayng0",
-    "v2rayng"
+    "v2rayng",
+    "yazi2",
+    "yazi",
+    "amir_webstudio",
+    "masterdnsvpn",
+    "cryptookade",
+    "xixv2ray",
+    "EfixVPN",
+    "maxilium",
+    "ghalagyann2"
 ]
 
 HEADERS = {
