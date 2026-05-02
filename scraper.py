@@ -186,7 +186,27 @@ CHANNELS = [
     "tasiyanc",
     "filtershekanpro",
     "omidiranazad",
-    "kamkarstore"
+    "kamkarstore",
+    "sinavm",
+    "SiNA_TEC",
+    "tg207547377_nnjgoqm7",
+    "nnjgoqm7",
+    "tg207547377",
+    "tg207547377nnjgoqm7",
+    "tg_nnjgoqm7",
+    "tgnnjgoqm7",
+    "freedom",
+    "decrypt",
+    "freedomdecrypt",
+    "freedom_decrypt",
+    "suturnvpn1",
+    "iranux",
+    "socksproxy",
+    "tg576916081_xad6dr9k",
+    "ai_duet",
+    "tanhanet",
+    "sosiranconnect",
+    "FreeInternetForJojo"
 ]
 
 HEADERS = {
