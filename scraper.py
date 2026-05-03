@@ -206,7 +206,11 @@ CHANNELS = [
     "ai_duet",
     "tanhanet",
     "sosiranconnect",
-    "FreeInternetForJojo"
+    "FreeInternetForJojo",
+    "SlipGate_hub",
+    "WebPackClub",
+    "azadi_az_inja_migzare",
+    "persianvpnhub"
 ]
 
 HEADERS = {
