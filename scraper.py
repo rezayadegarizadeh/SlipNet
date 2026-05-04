@@ -68,6 +68,7 @@ CHANNELS = [
     "mahsa",
     "mmahsa",
     "break_the_barriers",
+    "Break_The_Barriers",
     "breakthebarriers",
     "Tirexnet",
     "filterchi03",
