@@ -233,7 +233,8 @@ CHANNELS = [
     "TirexNet",
     "SOSIranConnect",
     "IranUnlocked",
-    "capcutchina"
+    "capcutchina",
+    "shervini"
 ]
 
 HEADERS = {
