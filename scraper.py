@@ -211,7 +211,29 @@ CHANNELS = [
     "SlipGate_hub",
     "WebPackClub",
     "azadi_az_inja_migzare",
-    "persianvpnhub"
+    "persianvpnhub",
+    "xgvpn",
+    "appxa",
+    "slipnet_chat",
+    "appxa2",
+    "IRNOTPHONE",
+    "IRAN_V2RAY1",
+    "SlipNet_decode",
+    "blackRay",
+    "SparrK_VPN",
+    "slipnet_chat",
+    "SlipNet_app",
+    "VConfing",
+    "archivetell",
+    "R0x00",
+    "WebPackClub",
+    "Break_The_Barriers",
+    "Zel2oVPN",
+    "ParsiNetFree",
+    "TirexNet",
+    "SOSIranConnect",
+    "IranUnlocked",
+    "capcutchina"
 ]
 
 HEADERS = {
