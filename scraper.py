@@ -340,7 +340,7 @@ def main():
             all_unique_links.update(unique_links)
             print(f"      Found {len(unique_links)} unique slipnet link(s)")
 
-        time.sleep(1)  # احترام به محدودیت
+          # احترام به محدودیت
 
     total_unique_all = len(all_unique_links)
     print(f"Total unique configs (across all channels): {total_unique_all}")
