@@ -234,7 +234,13 @@ CHANNELS = [
     "SOSIranConnect",
     "IranUnlocked",
     "capcutchina",
-    "shervini"
+    "shervini",
+    "npvtunel_karing_hiddify",
+    "RavenAzad",
+    "baraye_azadi_gp",
+    "amir_webstudio",
+    "aiShervin",
+    "Shervini"
 ]
 
 HEADERS = {
